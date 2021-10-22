@@ -1,0 +1,94 @@
+*, html {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-image: url("./../assets/table.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+h3 {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.box-container {
+    height: 50rem;
+    max-height: 50rem;
+    width: 60rem;
+    max-width: 60rem;
+}
+
+
+/* Action Row */
+.action-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: #b79522;
+}
+
+.logo {
+    color: #4f4f4f;
+    font-family: 'Nanum Pen Script', cursive;
+}
+
+.logo:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+/* View Container */
+.view-container{
+    border: 1px solid black;
+    height: 100%;
+    width: 100%;
+    background-color: #f4dc72;
+    overflow: auto;
+}
+
+/* Custom Scrollbar */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f4dc72;
+  border: 0px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}

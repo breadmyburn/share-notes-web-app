@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet"/>
+    <link href="/css/base.css" rel="stylesheet">
+    <link href="/css/index.css" rel="stylesheet">
+    <title>Share Your Notes!</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box-container">
+            <div class="action-row">
+                <a href="/" class="logo"><h3>ShareNotes</h3></a>
+                <a href="notes/new" class="btn btn-primary">New Note</a>
+                <div> 
+                    <form class="search" action="" method="GET">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <select name="", class="form-select">
+                                    <option selected value="Subject">Title</option>
+                                    <option value="File">Subject</option>
+                                </select>
+                            </div>
+                            <div class="form-outline">
+                                <input type="search" id="form1" class="form-control" />
+                                <label class="form-label" for="form1">Search</label>
+                            </div>
+                            <button type="button" class="btn btn-primary">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="view-container">
+                <% if (notes && notes.length) { %>
+                    <ul class="list-group">
+                        <% notes.forEach(note => { %>
+                            <li>
+                                <a href="notes/<%= note.slug %>" class="list-group-item list-group-item-action d-flex justify-content-start align-items-start">
+                                    <div class="info ms-2 me-3">
+                                        <div class="fw-bold"><%= note.title %></div>
+                                        <%= note.subject %>
+                                        <div><span class="badge bg-primary rounded-pill">
+                                            <%= note.createdAt.toLocaleDateString() %>
+                                        </span></div>
+                                    </div>
+                                    <div>
+                                        <%= note.description %> 
+                                    </div>
+                                </a>
+                            </li>
+                        <% }) %>
+                    </ul>
+                <% } %>     
+            </div>
+        </div>
+    </div>
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!-- Title -->
+<div class="form-outline mb-4">
+    <input required type="text" value="<%= note.title %>" id="title" name="title" class="form-control" maxlength="64"/>
+    <label class="form-label" for="subject">Title</label>
+</div>
+
+<!-- Subject -->
+<div class="form-outline mb-4">
+    <input type="text" value="<%= note.subject %>" id="subject" name="subject" class="form-control" maxlength="32"/>
+    <label class="form-label" for="subject">Subject</label>
+</div>
+
+<!-- Description -->
+<div class="form-outline mb-4">
+    <textarea class="form-control" id="description" name="description" rows="3" maxlength="172"><%= note.description %></textarea>
+    <label class="form-label" for="description">Description</label>
+</div>
+
+<!-- Notes -->
+<div class="form-outline mb-3">
+    <textarea required class="form-control" id="notes" name="notes" rows="15"><%= note.notes %></textarea>
+    <label class="form-label" for="Notes">Notes</label>
+</div>
+  
+<!-- Buttons -->
+<button type="submit" class="btn btn-success">Save</button>
+<a href="/" class="btn btn-danger">Cancel</a>
